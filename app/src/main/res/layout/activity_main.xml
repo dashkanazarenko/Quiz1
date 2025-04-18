@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,42 +9,58 @@
     android:background="@drawable/wallaper"
     tools:context=".MainActivity">
 
-    <!-- Иконка викторины -->
+    <!-- Иконка викторины - теперь центрирована и с ограниченным размером -->
     <ImageView
         android:id="@+id/quizIcon"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/quiz"/>
+        android:maxHeight="150dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <!-- Текст "Выберите тему" -->
     <TextView
         android:id="@+id/chooseTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#99ffffff"
-        android:layout_below="@+id/quizIcon"
-        android:text="@string/choose_quiz"/>
-
+        android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:shadowColor="#80000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:letterSpacing="0.05"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/choose_quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quizIcon"/>
     <!-- ScrollView для прокрутки содержимого -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/chooseTopic"
-        android:layout_above="@+id/startQuizBtn"
-        android:layout_marginTop="10dp">
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/startQuizBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseTopic">
 
         <!-- Основной контейнер для содержимого -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
 
             <!-- Первая линия с кнопками -->
             <LinearLayout
@@ -53,8 +69,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:weightSum="2">
 
                 <!-- Первая кнопка -->
@@ -65,12 +81,12 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginEnd="5dp"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/programming"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -78,7 +94,7 @@
                         android:layout_marginTop="8dp"
                         android:textColor="#CC000000"
                         android:gravity="center"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/quiz_name1"/>
                 </LinearLayout>
@@ -91,19 +107,19 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginStart="5dp"
+                    android:padding="16dp"
+                    android:layout_marginStart="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/database"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:textColor="#CC000000"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:text="@string/quiz_name2"/>
@@ -115,9 +131,9 @@
                 android:id="@+id/line_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -129,12 +145,12 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginEnd="5dp"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/webprogramming"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -142,7 +158,7 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center"
                         android:textColor="#CC000000"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/quiz_name3"/>
                 </LinearLayout>
@@ -155,19 +171,19 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginStart="5dp"
+                    android:padding="16dp"
+                    android:layout_marginStart="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/technology"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:textColor="#CC000000"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:text="@string/quiz_name4"/>
@@ -179,13 +195,13 @@
                 android:id="@+id/line_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <!-- Третья кнопка -->
+                <!-- Пятая кнопка -->
                 <LinearLayout
                     android:id="@+id/krLayout"
                     android:layout_width="0dp"
@@ -193,12 +209,12 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginEnd="5dp"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/cybersecurity"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -206,12 +222,12 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center"
                         android:textColor="#CC000000"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:text="@string/quiz_name5"/>
                 </LinearLayout>
 
-                <!-- Четвертая кнопка -->
+                <!-- Шестая кнопка -->
                 <LinearLayout
                     android:id="@+id/iiLayout"
                     android:layout_width="0dp"
@@ -219,19 +235,19 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="20dp"
-                    android:layout_marginStart="5dp"
+                    android:padding="16dp"
+                    android:layout_marginStart="8dp"
                     android:background="@drawable/round_back">
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/creativity_15557953"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:textColor="#CC000000"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:textStyle="bold"
                         android:text="@string/quiz_name6"/>
@@ -243,15 +259,17 @@
     <!-- Кнопка "Начать викторину" -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startQuizBtn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/start_quiz"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:textColor="#000000"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:background="@drawable/round_btn"/>
-</RelativeLayout>
+        android:background="@drawable/round_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
