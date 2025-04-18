@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallaper"
+    tools:context=".MainActivity">
+
+    <!-- Иконка викторины -->
+    <ImageView
+        android:id="@+id/quizIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/quiz"/>
+
+    <!-- Текст "Выберите тему" -->
+    <TextView
+        android:id="@+id/chooseTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#99ffffff"
+        android:layout_below="@+id/quizIcon"
+        android:text="@string/choose_quiz"/>
+
+    <!-- ScrollView для прокрутки содержимого -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chooseTopic"
+        android:layout_above="@+id/startQuizBtn"
+        android:layout_marginTop="10dp">
+
+        <!-- Основной контейнер для содержимого -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Первая линия с кнопками -->
+            <LinearLayout
+                android:id="@+id/line_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:weightSum="2">
+
+                <!-- Первая кнопка -->
+                <LinearLayout
+                    android:id="@+id/breadLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/programming"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#CC000000"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name1"/>
+                </LinearLayout>
+
+                <!-- Вторая кнопка -->
+                <LinearLayout
+                    android:id="@+id/PLLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/database"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#CC000000"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Вторая линия с кнопками -->
+            <LinearLayout
+                android:id="@+id/line_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Третья кнопка -->
+                <LinearLayout
+                    android:id="@+id/carLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/webprogramming"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:textColor="#CC000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name3"/>
+                </LinearLayout>
+
+                <!-- Четвертая кнопка -->
+                <LinearLayout
+                    android:id="@+id/favoriteLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/technology"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#CC000000"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name4"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Третья линия с кнопками -->
+            <LinearLayout
+                android:id="@+id/line_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- Третья кнопка -->
+                <LinearLayout
+                    android:id="@+id/krLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/cybersecurity"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:textColor="#CC000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name5"/>
+                </LinearLayout>
+
+                <!-- Четвертая кнопка -->
+                <LinearLayout
+                    android:id="@+id/iiLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/round_back">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/creativity_15557953"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#CC000000"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="@string/quiz_name6"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Кнопка "Начать викторину" -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startQuizBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_quiz"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/round_btn"/>
+</RelativeLayout>

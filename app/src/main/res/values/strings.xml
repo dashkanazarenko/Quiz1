@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Викторины</string>
+    <string name="choose_quiz">Выберите викторину</string>
+    <string name="start_quiz">Начать викторину</string>
+    <string name="next_quistion">Следующий вопрос</string>
+    <string name="start_new_quiz">Начать новую викторину</string>
+    <string name="your_res">Ваш результат: </string>
+    <string name="correct">Количество правильных: 0 </string>
+    <string name="incorrect">Количество неправильных: 0 </string>
+    <string name="start">Начать </string>
+
+    <string name="quiz_name1">ООП</string>
+    <string name="quiz_name2">Базы данных</string>
+    <string name="quiz_name3">Веб-программирование</string>
+    <string name="quiz_name4">Сетевые технологии</string>
+    <string name="quiz_name5">Кибербезопасность</string>
+    <string name="quiz_name6">Искусственный интеллект</string>
+</resources>
